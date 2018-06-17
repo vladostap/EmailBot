@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmailBot"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Email Bot" Height="312.712" Width="743.749"
+        ResizeMode="NoResize">
     <Grid>
-        
+        <Button Content="Авторизоваться" HorizontalAlignment="Left" Margin="91,110,0,0" VerticalAlignment="Top" Width="100" Height="20" Name="Auth" Click="Auth_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Name="Login"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,42,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Name="Password"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Height="23" Width="59" Margin="10,14,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,42,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Height="23" Width="59"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="75,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Name="CodeWord"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" Text="Тема" VerticalAlignment="Top" Height="23" Width="59"/>
+        <ListView HorizontalAlignment="Left" Height="254" Margin="313,12,0,0" VerticalAlignment="Top" Width="408" Name="ListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding From}">Отправитель</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Text}">Сообщение</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Attachment}">Файл</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
